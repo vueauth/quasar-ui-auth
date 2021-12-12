@@ -1,0 +1,22 @@
+{
+  "auth": {
+    "authProvider": {
+      "identifier": "firebase",
+      "packageName": "firebase-composables"
+    },
+    "features": [
+      {
+        "id": "identityPassword:register",
+        "composable": "useIdentityPasswordRegister"
+      },
+      {
+        "id": "identityPassword:login",
+        "composable": "useIdentityPasswordLogin"
+      },
+      {
+        "id": "identityPassword:logout",
+        "composable": "useIdentityPasswordLogout"
+      }
+    ]
+  }
+}

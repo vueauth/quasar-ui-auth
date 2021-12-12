@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "quasar-ui-auth-monorepo",
+  "devDependencies": {
+    "@vuepress/bundler-vite": "^2.0.0-beta.27",
+    "eslint-plugin-vue": "^8.0.0",
+    "vuepress": "^2.0.0-beta.27"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "dev": "cd ./test-app && yarn dev",
+    "build": "cd ./ui && yarn build"
+  },
+  "workspaces": [
+    "ui",
+    "ui/dev",
+    "app-extension",
+    "test-app"
+  ],
+  "dependencies": {
+    "firebase-composables": "^1.0.0-alpha.23",
+    "supabase-composables": "^1.0.0-alpha.11"
+  }
+}
