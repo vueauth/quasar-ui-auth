@@ -17,10 +17,10 @@
     "build:js": "node build/script.javascript.js"
   },
   "repository": {
-    "type": "https://github.com/ldiebold/quasar-ui-auth",
-    "url": "https://github.com/ldiebold/quasar-ui-auth"
+    "type": "https://github.com/vueauth/quasar-ui-auth",
+    "url": "https://github.com/vueauth/quasar-ui-auth"
   },
-  "bugs": "https://github.com/ldiebold/quasar-ui-auth/issues",
+  "bugs": "https://github.com/vueauth/quasar-ui-auth/issues",
   "homepage": "https://quasar-auth.netlify.app/",
   "devDependencies": {
     "@quasar/app": "^3.0.0",
@@ -53,9 +53,10 @@
   ],
   "dependencies": {
     "firebase": "^9.3.0",
-    "auth-composables": "^1.0.0-alpha.16",
+    "@vueauth/core": "^1.0.0-alpha.16",
     "@supabase/supabase-js": "^1.28.5",
-    "firebase-composables": "^1.0.0-alpha.22",
-    "supabase-composables": "^1.0.0-alpha.11"
+    "@vueauth/firebase": "^1.0.0-alpha.22",
+    "@vueauth/sanctum": "^1.0.0-alpha.11",
+    "@vueauth/supabase": "^1.0.0-alpha.11"
   }
 }

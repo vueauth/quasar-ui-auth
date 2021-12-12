@@ -1,4 +1,4 @@
-import { useIdentityPasswordRegister } from 'auth-composables'
+import { useIdentityPasswordRegister } from '@vueauth/core'
 import { useRouter } from 'vue-router'
 
 export default () => {

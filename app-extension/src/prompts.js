@@ -11,14 +11,14 @@ module.exports = function () {
           name: 'Laravel Sanctum',
           value: {
             identifier: 'sanctum',
-            packageName: 'sanctum-composables',
+            packageName: '@vueauth/sanctum',
           },
         },
         {
           name: 'Firebase',
           value: {
             identifier: 'firebase',
-            packageName: 'firebase-composables',
+            packageName: '@vueauth/firebase',
           },
         },
       ],

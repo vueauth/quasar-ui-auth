@@ -1,8 +1,8 @@
 {
-  "auth": {
+  "@vueauth/auth": {
     "authProvider": {
       "identifier": "firebase",
-      "packageName": "firebase-composables"
+      "packageName": "@vueauth/firebase"
     },
     "features": [
       {

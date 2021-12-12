@@ -46,8 +46,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import { getDefaultProvider } from 'auth-composables'
-import AuthAccountMenu from 'auth/components/AuthAccountMenu.vue'
+import { getDefaultProvider } from '@vueauth/core'
+import AuthAccountMenu from 'src/auth/components/AccountMenu/AccountMenu.vue'
 
 const leftDrawerOpen = ref(false)
 

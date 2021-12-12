@@ -4,7 +4,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { useAuthenticatedRedirector, useUnauthenticatedRedirector } from 'auth-composables'
+import { useAuthenticatedRedirector, useUnauthenticatedRedirector } from '@vueauth/core'
 import { Loading } from 'quasar'
 import { unref } from 'vue'
 

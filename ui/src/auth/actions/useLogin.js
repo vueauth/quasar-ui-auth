@@ -1,5 +1,5 @@
 import { useRouter } from 'vue-router'
-import { useIdentityPasswordLogin } from 'auth-composables'
+import { useIdentityPasswordLogin } from '@vueauth/core'
 
 export default () => {
   const router = useRouter()

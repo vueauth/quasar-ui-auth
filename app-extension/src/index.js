@@ -8,11 +8,11 @@
 
 function extendConf (conf, api) {
   // register our boot file
-  conf.boot.push('~quasar-app-extension-auth/src/boot/registerAuthRoutes.js')
+  conf.boot.push('~@vueauth/quasar-app-extension-auth/src/boot/registerAuthRoutes.js')
   conf.boot.push('../auth/authProvidersBoot.js')
 
   // make sure app extension files & ui package gets transpiled
-  conf.build.transpileDependencies.push(/quasar-app-extension-auth[\\/]src/)
+  conf.build.transpileDependencies.push(/quasar-app-extension-model-components[\\/]src/)
 
   conf.framework.plugins.push('Loading')
 }

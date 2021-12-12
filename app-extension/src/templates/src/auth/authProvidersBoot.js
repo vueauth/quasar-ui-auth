@@ -1,5 +1,5 @@
 import { boot } from 'quasar/wrappers'
-import { AuthPlugin } from 'auth-composables'
+import { AuthPlugin } from '@vueauth/core'
 <% if (authProviderIdentifier === 'firebase') { %>import firebaseConfig from 'app/config/firebase-config'<% } %>
 import {
   <% if (authProviderIdentifier === 'firebase') { %>FirebasePlugin,<% } %>

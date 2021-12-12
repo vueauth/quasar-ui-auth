@@ -14,7 +14,7 @@
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
     "quasar": "^2.0.0",
-    "sanctum-composables": "^1.0.0-alpha.33"
+    "@vueauth/sanctum": "^1.0.0-alpha.33"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
@@ -26,7 +26,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.0",
     "eslint-webpack-plugin": "^2.4.0",
-    "quasar-app-extension-auth": "^1.0.0-alpha.0"
+    "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.0"
   },
   "browserslist": [
     "last 10 Chrome versions",

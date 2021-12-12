@@ -1,11 +1,11 @@
-const answeredSanctum = require('./answered.js')('sanctum-composables')
+const answeredSanctum = require('./answered.js')('@vueauth/sanctum')
 
 module.exports = [
   {
     when: answeredSanctum,
     type: 'editor',
     name: 'sanctum_config',
-    message: 'Paste your firebase credentials'
+    message: 'Paste your firebase credentials',
   },
   {
     when: answeredSanctum,
@@ -15,16 +15,16 @@ module.exports = [
     choices: [
       {
         name: 'Identifier password login (e.g. email password)',
-        value: 'authProvider:identityPassword:login'
+        value: 'authProvider:identityPassword:login',
       },
       {
         name: 'Identifier password Register (e.g. email password)',
-        value: 'authProvider:identityPassword:register'
+        value: 'authProvider:identityPassword:register',
       },
       {
         name: 'Logout',
-        value: 'authProvider:logout'
-      }
-    ]
-  }
+        value: 'authProvider:logout',
+      },
+    ],
+  },
 ]

@@ -1,4 +1,4 @@
-const answeredFirebase = require('./answered.js')('firebase-composables')
+const answeredFirebase = require('./answered.js')('@vueauth/firebase')
 
 module.exports = [
   // {

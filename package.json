@@ -19,7 +19,7 @@
     "test-app"
   ],
   "dependencies": {
-    "firebase-composables": "^1.0.0-alpha.23",
-    "supabase-composables": "^1.0.0-alpha.11"
+    "@vueauth/firebase": "^1.0.0-alpha.23",
+    "@vueauth/supabase": "^1.0.0-alpha.11"
   }
 }

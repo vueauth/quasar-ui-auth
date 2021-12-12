@@ -1,5 +1,5 @@
 import { boot } from 'quasar/wrappers'
-import { AuthPlugin } from 'auth-composables'
+import { AuthPlugin } from '@vueauth/core'
 import firebaseConfig from 'app/config/firebase-config'
 import supabaseConfig from 'app/config/supabase-config'
 import {
@@ -15,7 +15,7 @@ import {
   useFetchUser as useFirebaseFetchUser,
   usePasswordResetViaEmail as useFirebasePasswordResetViaEmail,
   useUpdatePassword as useFirebaseUpdatePassword,
-} from 'firebase-composables'
+} from '@vueauth/firebase'
 import {
   SanctumPlugin,
   useIdentityPasswordRegister as useSanctumIdentityPasswordRegister,
@@ -29,7 +29,7 @@ import {
   useFetchUser as useSanctumFetchUser,
   usePasswordResetViaEmail as useSupabaseSanctumResetViaEmail,
   useUpdatePassword as useSanctumUpdatePassword,
-} from 'sanctum-composables'
+} from '@vueauth/sanctum'
 import {
   SupabasePlugin,
   useIdentityPasswordRegister as useSupabaseIdentityPasswordRegister,
@@ -43,7 +43,7 @@ import {
   useFetchUser as useSupabaseFetchUser,
   usePasswordResetViaEmail as useSupabasePasswordResetViaEmail,
   useUpdatePassword as useSupabaseUpdatePassword,
-} from 'supabase-composables'
+} from '@vueauth/supabase'
 
 export default boot(({ app }) => {
   app.use(FirebasePlugin, firebaseConfig)

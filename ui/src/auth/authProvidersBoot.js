@@ -1,5 +1,5 @@
 import { boot } from 'quasar/wrappers'
-import { AuthPlugin } from 'auth-composables'
+import { AuthPlugin } from '@vueauth/core'
 import {
   <% if (authProviderIdentifier === 'firebase') { %>FirebasePlugin,<% } %>
   <% for (const feature of features) { %><%= feature.composable %>,
