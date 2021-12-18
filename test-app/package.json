@@ -13,20 +13,19 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
-    "quasar": "^2.0.0",
-    "@vueauth/sanctum": "^1.0.0-alpha.33"
+    "quasar": "^2.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
     "@quasar/app": "^3.0.0",
+    "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.10",
     "eslint": "^7.14.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.0",
-    "eslint-webpack-plugin": "^2.4.0",
-    "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.0"
+    "eslint-webpack-plugin": "^2.4.0"
   },
   "browserslist": [
     "last 10 Chrome versions",

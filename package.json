@@ -17,9 +17,5 @@
     "ui/dev",
     "app-extension",
     "test-app"
-  ],
-  "dependencies": {
-    "@vueauth/firebase": "^1.0.0-alpha.23",
-    "@vueauth/supabase": "^1.0.0-alpha.11"
-  }
+  ]
 }

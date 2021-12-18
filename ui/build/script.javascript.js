@@ -22,7 +22,13 @@ const rollupPlugins = [
   }),
   nodeResolve({
     extensions: ['.js'],
-    preferBuiltins: false
+    preferBuiltins: false,
+    dedupe: [
+      '@vueauth/core',
+      '@vueauth/sanctum',
+      '@vueauth/firebase',
+      '@vueauth/supabase'
+    ]
   }),
   vuePlugin(),
   json()
@@ -88,12 +94,12 @@ build(builds)
  * Helpers
  */
 
-function pathResolve(_path) {
+function pathResolve (_path) {
   return path.resolve(__dirname, _path)
 }
 
 // eslint-disable-next-line no-unused-vars
-function addAssets(builds, type, injectName) {
+function addAssets (builds, type, injectName) {
   const
     files = fs.readdirSync(pathResolve('../../ui/src/components/' + type)),
     plugins = [buble(bubleConfig)],
@@ -124,20 +130,23 @@ function addAssets(builds, type, injectName) {
     })
 }
 
-function build(builds) {
+function build (builds) {
   return Promise
     .all(builds.map(genConfig).map(buildEntry))
     .catch(buildUtils.logError)
 }
 
-function genConfig(opts) {
+function genConfig (opts) {
   Object.assign(opts.rollup.input, {
     plugins: rollupPlugins,
     external: [
       'vue',
       'quasar',
       'vue-router',
-      '@vueuse/core'
+      '@vueauth/core',
+      '@vueauth/sanctum',
+      '@vueauth/firebase',
+      '@vueauth/supabase'
     ]
   })
 
@@ -149,12 +158,12 @@ function genConfig(opts) {
   return opts
 }
 
-function addExtension(filename, ext = 'min') {
+function addExtension (filename, ext = 'min') {
   const insertionPoint = filename.lastIndexOf('.')
   return `${filename.slice(0, insertionPoint)}.${ext}${filename.slice(insertionPoint)}`
 }
 
-function buildEntry(config) {
+function buildEntry (config) {
   return rollup
     .rollup(config.rollup.input)
     .then(bundle => bundle.generate(config.rollup.output))
@@ -196,7 +205,7 @@ function buildEntry(config) {
     })
 }
 
-function injectVueRequirement(code) {
+function injectVueRequirement (code) {
   // eslint-disable-next-line
   const index = code.indexOf(`Vue = Vue && Vue.hasOwnProperty('default') ? Vue['default'] : Vue`)
 

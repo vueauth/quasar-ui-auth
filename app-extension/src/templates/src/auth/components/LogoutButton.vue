@@ -4,7 +4,7 @@ import useLogout from 'auth/composables/useLogout'
 
 const {
   loading,
-  onLogoutClicked,
+  onLogoutClicked
 } = useLogout()
 </script>
 

@@ -1,8 +1,8 @@
 <script setup>
 import { QCard, QCardSection, QBtn } from 'quasar'
 import usePasswordReset from 'auth/composables/usePasswordReset'
-import AuthErrorsBanner from './ErrorsBanner.vue'
-import AuthPasswordResetRequestForm from './PasswordResetRequestForm.vue'
+import ErrorsBanner from './ErrorsBanner.vue'
+import PasswordResetRequestForm from './forms/PasswordResetRequestForm.vue'
 
 const {
   onRequestResetClicked,
@@ -20,7 +20,7 @@ const {
   <q-card>
     <q-card-section class="text-center q-pb-sm">
       <!-- Register Form -->
-      <AuthPasswordResetRequestForm
+      <PasswordResetRequestForm
         v-model:email="requestForm.email"
         :validation-errors="validationErrors"
         @update:model-value="resetErrors"
@@ -28,7 +28,7 @@ const {
 
       <!-- Errors -->
       <div v-if="!hasValidationErrors">
-        <AuthErrorsBanner :errors="errors" />
+        <ErrorsBanner :errors="errors" />
       </div>
     </q-card-section>
 

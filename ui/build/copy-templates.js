@@ -1,7 +1,9 @@
-const { copySync, removeSync } = require('fs-extra');
+const { copySync, removeSync } = require('fs-extra')
 
-console.log(` ⬆️  Copying template files...\n`)
+console.log(' ⬆️  Copying template files...\n')
 
 removeSync('../app-extension/src/templates')
 
 copySync('src/auth', '../app-extension/src/templates/src/auth')
+copySync('src/layouts', '../app-extension/src/templates/src/layouts')
+copySync('src/pages', '../app-extension/src/templates/src/pages')

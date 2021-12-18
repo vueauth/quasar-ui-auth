@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-app-extension-auth",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-alpha.21",
   "description": "Simple firebase integration with the Quasar Framework",
   "author": "luke@ldiebold.com",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "bugs": "https://github.com/ldiebold/quasar-ui-firebase/issues",
   "homepage": "https://quasar-firebase.netlify.app/",
   "dependencies": {
-    "@vueauth/quasar-ui-auth": "^1.0.0-alpha.9"
+    "@vueauth/quasar-ui-auth": "^1.0.0-alpha.21"
   },
   "engines": {
     "node": ">= 8.9.0",

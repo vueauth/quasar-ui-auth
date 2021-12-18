@@ -5,34 +5,33 @@ export default boot(({ router }) => {
     name: 'auth.register',
     path: '/register',
     meta: { unauthOnly: true },
-    component: () => import('src/auth/pages/AuthIdentityPasswordRegisterPage.vue'),
+    component: () => import('src/auth/pages/IdentityPasswordRegisterPage.vue')
   })
 
   router.addRoute('/', {
     name: 'auth.login',
     path: '/login',
     meta: { unauthOnly: true },
-    component: () => import('src/auth/pages/AuthIdentityPasswordLoginPage.vue'),
+    component: () => import('src/auth/pages/IdentityPasswordLoginPage.vue')
   })
 
   router.addRoute('/', {
     name: 'auth.requestPasswordReset',
     path: '/forgot-password',
     meta: { unauthOnly: true },
-    component: () => import('src/auth/pages/AuthPasswordResetViaEmailPage.vue'),
+    component: () => import('src/auth/pages/PasswordResetViaEmailPage.vue')
   })
 
   router.addRoute('/', {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    redirect: '/dashboard',
+    path: '/dashboard',
+    component: () => import('layouts/AuthenticatedLayout.vue'),
     children: [
       {
-        path: 'dashboard',
+        path: '',
         name: 'dashboard',
         component: () => import('src/pages/UserDashboard.vue'),
-        meta: { authOnly: true },
-      },
-    ],
+        meta: { authOnly: true }
+      }
+    ]
   })
 })

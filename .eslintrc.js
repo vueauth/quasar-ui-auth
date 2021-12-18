@@ -11,8 +11,7 @@ module.exports = {
   },
 
   env: {
-    browser: true,
-    'vue/setup-compiler-macros': true
+    browser: true
   },
 
   // Rules order is important, please avoid shuffling them
@@ -61,7 +60,6 @@ module.exports = {
     'one-var': 'off',
     'no-void': 'off',
     'multiline-ternary': 'off',
-    'comma-dangle': ['warn', 'always-multiline'],
 
     'import/first': 'off',
     'import/named': 'error',

@@ -1,10 +1,10 @@
 <script setup>
 import { QBtn } from 'quasar'
-import useLogout from 'auth/actions/useLogout'
+import useLogout from 'auth/composables/useLogout'
 
 const {
   loading,
-  onLogoutClicked,
+  onLogoutClicked
 } = useLogout()
 </script>
 

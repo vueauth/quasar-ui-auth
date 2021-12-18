@@ -1,20 +1,23 @@
 <script setup>
 import { QInput, QForm } from 'quasar'
+import { defineProps, defineEmits } from 'vue'
 
 defineProps({
   email: {
     required: true,
-    type: String,
+    type: String
   },
-  password: {
-    required: true,
-    type: String,
-  },
+  validationErrors: {
+    required: false,
+    type: Object,
+    default () {
+      return {}
+    }
+  }
 })
 
 const emit = defineEmits([
-  'update:email',
-  'update:password',
+  'update:email'
 ])
 </script>
 
@@ -25,16 +28,11 @@ const emit = defineEmits([
       filled
       label="Email"
       :model-value="email"
-      class="q-mb-sm"
+      :error="!!validationErrors?.['email']"
+      :error-message="validationErrors?.['email']?.[0]"
+      class="q-mb-md"
+      hide-bottom-space
       @update:model-value="value => emit('update:email', value)"
-    />
-    <q-input
-      filled
-      type="password"
-      label="Password"
-      :model-value="password"
-      class="q-mb-sm"
-      @update:model-value="value => emit('update:password', value)"
     />
     <slot name="bottom" />
   </q-form>

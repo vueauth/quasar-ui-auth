@@ -1,4 +1,5 @@
-import AuthLogoutButton from './auth/components/AuthLogoutButton.vue'
+import LogoutButton from './auth/components/LogoutButton.vue'
+import authenticateRoutes from './authenticateRoutes'
 
 // eslint-disable-next-line no-undef
 const version = __UI_VERSION__
@@ -9,7 +10,8 @@ function install (app, config) {
 
 export {
   version,
-  AuthLogoutButton,
+  LogoutButton,
+  authenticateRoutes,
 
-  install,
+  install
 }

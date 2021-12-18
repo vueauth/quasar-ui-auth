@@ -3,20 +3,6 @@
     "authProvider": {
       "identifier": "firebase",
       "packageName": "@vueauth/firebase"
-    },
-    "features": [
-      {
-        "id": "identityPassword:register",
-        "composable": "useIdentityPasswordRegister"
-      },
-      {
-        "id": "identityPassword:login",
-        "composable": "useIdentityPasswordLogin"
-      },
-      {
-        "id": "identityPassword:logout",
-        "composable": "useIdentityPasswordLogout"
-      }
-    ]
+    }
   }
 }

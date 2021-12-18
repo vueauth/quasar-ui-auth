@@ -7,8 +7,13 @@
 
 module.exports = function (api) {
   api.render('./templates', {
-    features: api.prompts.features,
     authProviderPackage: api.prompts.authProvider.packageName,
     authProviderIdentifier: api.prompts.authProvider.identifier,
+    authProviderIdentifierPascal: capitalizeFirstLetter(api.prompts.authProvider.identifier)
   })
+  api.render('./providerSpecificTemplates/' + api.prompts.authProvider.identifier)
+}
+
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }

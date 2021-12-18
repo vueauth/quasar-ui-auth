@@ -38,8 +38,7 @@ module.exports.writeFile = function (dest, code, zip) {
           if (err) return reject(err)
           report(` (gzipped: ${getSize(zipped).padStart(8)})`)
         })
-      }
-      else {
+      } else {
         report()
       }
     })
