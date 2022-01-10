@@ -11,8 +11,7 @@ const {
   onRegisterClicked,
   validationErrors,
   hasValidationErrors,
-  customFields,
-  registered,
+  registered
 } = useRegister()
 
 </script>
@@ -25,7 +24,7 @@ const {
         v-model:email="form.email"
         v-model:password="form.password"
         v-model:password-confirmation="form.password_confirmation"
-        v-model:name="customFields.name"
+        v-model:name="form.name"
         :validation-errors="validationErrors"
       />
 

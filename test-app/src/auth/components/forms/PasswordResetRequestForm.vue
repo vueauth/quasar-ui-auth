@@ -1,22 +1,23 @@
 <script setup>
 import { QInput, QForm } from 'quasar'
+import { defineProps, defineEmits } from 'vue'
 
 defineProps({
   email: {
     required: true,
-    type: String,
+    type: String
   },
   validationErrors: {
     required: false,
     type: Object,
     default () {
       return {}
-    },
-  },
+    }
+  }
 })
 
 const emit = defineEmits([
-  'update:email',
+  'update:email'
 ])
 </script>
 

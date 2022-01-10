@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-ui-auth",
-  "version": "1.0.0-alpha.21",
+  "version": "1.0.0-alpha.22",
   "author": "luke@ldiebold.com",
   "description": "Simple auth integration with the Quasar Framework",
   "license": "MIT",
@@ -53,11 +53,6 @@
     "last 4 iOS versions"
   ],
   "dependencies": {
-    "@supabase/supabase-js": "^1.28.5",
-    "@vueauth/core": "^1.0.0-alpha.40",
-    "@vueauth/firebase": "^1.0.0-alpha.22",
-    "@vueauth/sanctum": "^1.0.0-alpha.11",
-    "@vueauth/supabase": "^1.0.0-alpha.11",
-    "firebase": "^9.3.0"
+    "@vueauth/core": "^1.0.0-alpha.40"
   }
 }

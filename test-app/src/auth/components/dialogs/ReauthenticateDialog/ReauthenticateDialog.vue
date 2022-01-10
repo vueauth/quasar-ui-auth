@@ -13,7 +13,7 @@ const {
   errors,
   loading,
   resetForm,
-  attemptSetEmailOnForm,
+  attemptSetEmailOnForm
 } = useLogin()
 
 isReauthenticating.value = true

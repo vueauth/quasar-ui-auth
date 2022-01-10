@@ -1,4 +1,3 @@
-import LogoutButton from './auth/components/LogoutButton.vue'
 import authenticateRoutes from './authenticateRoutes'
 
 // eslint-disable-next-line no-undef
@@ -10,7 +9,6 @@ function install (app, config) {
 
 export {
   version,
-  LogoutButton,
   authenticateRoutes,
 
   install

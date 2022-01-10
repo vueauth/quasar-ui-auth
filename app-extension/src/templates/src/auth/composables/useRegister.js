@@ -1,10 +1,10 @@
-import { useIdentityPasswordRegister, getOptions } from '@vueauth/core'
+import { useIdentityPasswordRegister, getConfig } from '@vueauth/core'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
 export default () => {
   const router = useRouter()
-  const { emailConfirm } = getOptions('', 'identityPassword:register')
+  const { emailConfirm } = getConfig('identityPassword:register')
   const registered = ref()
 
   const {

@@ -1,24 +1,24 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
 defineProps({
   showToolbar: {
     required: false,
     type: Boolean,
-    default: false,
+    default: false
   },
   toolbarText: {
     required: false,
     type: String,
-    default: null,
-  },
+    default: null
+  }
 })
 
 const dialogComponent = ref()
 
 defineExpose({
   hide: (...props) => dialogComponent.value.hide(...props),
-  show: (...props) => dialogComponent.value.show(...props),
+  show: (...props) => dialogComponent.value.show(...props)
 })
 
 const showDialog = ref(false)

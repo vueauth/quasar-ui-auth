@@ -46,7 +46,7 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
       // publicPath: '/',
@@ -94,10 +94,27 @@ module.exports = configure(function (ctx) {
           changeOrigin: true
         },
         '/sanctum/csrf-cookie': 'http://localhost',
-        '/login': 'http://localhost',
-        '/register': 'http://localhost',
+        '/login': {
+          target: 'http://localhost',
+          bypass: function (req) {
+            if (req.method !== 'POST') return '/login'
+          }
+        },
+        '/register': {
+          target: 'http://localhost',
+          bypass: function (req) {
+            if (req.method !== 'POST') return '/register'
+          }
+        },
         '/logout': 'http://localhost',
-        '/user/password': 'http://localhost'
+        '/reset-password': 'http://localhost',
+        '/user/password': 'http://localhost',
+        '/forgot-password': {
+          target: 'http://localhost',
+          bypass: function (req) {
+            if (req.method !== 'POST') return '/forgot-password'
+          }
+        }
       }
     },
 

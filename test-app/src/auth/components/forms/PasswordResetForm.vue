@@ -11,16 +11,23 @@ defineProps({
     required: true,
     type: String
   },
+  passwordConfirmation: {
+    required: true,
+    type: String
+  },
   validationErrors: {
     required: false,
     type: Object,
-    default () { return {} }
+    default () {
+      return {}
+    }
   }
 })
 
 const emit = defineEmits([
   'update:email',
-  'update:password'
+  'update:password',
+  'update:passwordConfirmation'
 ])
 </script>
 
@@ -39,14 +46,25 @@ const emit = defineEmits([
     />
     <q-input
       filled
-      type="password"
       label="Password"
       :model-value="password"
       :error="!!validationErrors?.['password']"
       :error-message="validationErrors?.['password']?.[0]"
-      class="q-mb-sm"
+      class="q-mb-xs"
+      type="password"
       hide-bottom-space
       @update:model-value="value => emit('update:password', value)"
+    />
+    <q-input
+      filled
+      label="Confirm Password"
+      :model-value="passwordConfirmation"
+      :error="!!validationErrors?.['password_confirmation']"
+      :error-message="validationErrors?.['password_confirmation']?.[0]"
+      class="q-mb-md"
+      type="password"
+      hide-bottom-space
+      @update:model-value="value => emit('update:passwordConfirmation', value)"
     />
     <slot name="bottom" />
   </q-form>

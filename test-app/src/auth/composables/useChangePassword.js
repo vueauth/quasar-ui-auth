@@ -11,7 +11,7 @@ export default () => {
     hasValidationErrors,
     requiresReauthentication,
     resetErrors,
-    resetForm,
+    resetForm
   } = useUpdatePassword()
 
   return {
@@ -25,6 +25,6 @@ export default () => {
     hasErrors,
     validationErrors,
     hasValidationErrors,
-    resetErrors,
+    resetErrors
   }
 }

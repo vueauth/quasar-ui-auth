@@ -1,8 +1,8 @@
 import { boot } from 'quasar/wrappers'
 import { AuthPlugin } from '@vueauth/core'
-import firebaseConfig from 'app/config/firebase'
+import sanctumConfig from 'app/config/sanctum'
 import {
-  FirebasePlugin,
+  SanctumPlugin,
   useIdentityPasswordRegister,
   useIdentityPasswordLogin,
   useIdentityPasswordLogout,
@@ -13,16 +13,16 @@ import {
   useAuthenticatedRedirector,
   useFetchUser,
   usePasswordResetViaEmail,
-  useUpdatePassword,
-} from '@vueauth/firebase'
+  useUpdatePassword
+} from '@vueauth/sanctum'
 
 export default boot(({ app }) => {
-  app.use(FirebasePlugin, firebaseConfig) // Be sure to update config/firebase to configure your app!
+  app.use(SanctumPlugin, sanctumConfig) // Be sure to update config/sanctum to configure your app!
 
   app.use(AuthPlugin, {
-    default: 'firebase',
+    default: 'sanctum',
     providers: {
-      firebase: {
+      sanctum: {
         features: {
           'identityPassword:register': useIdentityPasswordRegister,
           'identityPassword:login': useIdentityPasswordLogin,
@@ -34,9 +34,9 @@ export default boot(({ app }) => {
           authState: useAuthState,
           authRedirector: useAuthRedirector,
           passwordResetViaEmail: usePasswordResetViaEmail,
-          updatePassword: useUpdatePassword,
-        },
-      },
-    },
+          updatePassword: useUpdatePassword
+        }
+      }
+    }
   })
 })

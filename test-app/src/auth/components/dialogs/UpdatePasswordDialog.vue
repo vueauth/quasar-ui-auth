@@ -18,7 +18,7 @@ const {
   validationErrors,
   hasValidationErrors,
   resetErrors,
-  resetForm,
+  resetForm
 } = useChangePassword()
 
 async function handleUpdatePassword () {

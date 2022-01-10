@@ -14,6 +14,6 @@ export default () => {
   return {
     logout,
     loading,
-    onLogoutClicked,
+    onLogoutClicked
   }
 }

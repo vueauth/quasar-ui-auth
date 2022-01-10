@@ -27,7 +27,9 @@ const rollupPlugins = [
       '@vueauth/core',
       '@vueauth/sanctum',
       '@vueauth/firebase',
-      '@vueauth/supabase'
+      '@vueauth/supabase',
+      '@supabase/supabase-js',
+      'firebase'
     ]
   }),
   vuePlugin(),
@@ -146,13 +148,18 @@ function genConfig (opts) {
       '@vueauth/core',
       '@vueauth/sanctum',
       '@vueauth/firebase',
-      '@vueauth/supabase'
+      '@vueauth/supabase',
     ]
   })
 
   Object.assign(opts.rollup.output, {
     banner: buildConf.banner,
-    globals: { vue: 'Vue', quasar: 'Quasar' }
+    globals: {
+      vue: 'Vue',
+      quasar: 'Quasar',
+      'vue-router': 'VueRouter',
+      '@vueauth/core': 'VueAuthCore'
+    }
   })
 
   return opts

@@ -6,8 +6,8 @@ import { unref } from 'vue'
 export default () => {
   const router = useRouter()
 
-  const authenticatedRedirector = useAuthenticatedRedirector('', '/dashboard', router)
-  const unauthenticatedRedirector = useUnauthenticatedRedirector('', '/login', router)
+  const authenticatedRedirector = useAuthenticatedRedirector({ redirectTo: { name: 'dashboard' }, router })
+  const unauthenticatedRedirector = useUnauthenticatedRedirector({ redirectTo: { name: 'auth.login' }, router })
 
   authenticatedRedirector.onChecked.value = () => Loading.hide()
   unauthenticatedRedirector.onChecked.value = () => Loading.hide()

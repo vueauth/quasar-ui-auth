@@ -1,36 +1,37 @@
 <script setup>
 import { QInput, QForm } from 'quasar'
+import { defineProps, defineEmits } from 'vue'
 
 defineProps({
   email: {
     required: true,
-    type: String,
+    type: String
   },
   password: {
     required: true,
-    type: String,
+    type: String
   },
   passwordConfirmation: {
     required: true,
-    type: String,
+    type: String
   },
   name: {
     required: false,
     type: String,
-    default: null,
+    default: null
   },
   validationErrors: {
     required: false,
     type: Object,
-    default () { return {} },
-  },
+    default () { return {} }
+  }
 })
 
 const emit = defineEmits([
   'update:email',
   'update:password',
   'update:passwordConfirmation',
-  'update:name',
+  'update:name'
 ])
 </script>
 

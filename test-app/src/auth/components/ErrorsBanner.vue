@@ -1,21 +1,21 @@
 <script setup>
-import { toRef } from 'vue'
+import { toRef, defineProps } from 'vue'
 
 const props = defineProps({
   errors: {
     required: true,
-    type: Array,
+    type: Array
   },
   class: {
     required: false,
     type: [Object, Array, String],
-    default: 'bg-negative q-mt-sm text-white',
+    default: 'bg-negative q-mt-sm text-white'
   },
   rounded: {
     required: false,
     type: Boolean,
-    default: true,
-  },
+    default: true
+  }
 })
 
 const classProps = toRef(props, 'class')

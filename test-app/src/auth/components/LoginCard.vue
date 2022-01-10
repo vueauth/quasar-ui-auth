@@ -10,7 +10,7 @@ const {
   loading,
   errors,
   validationErrors,
-  hasValidationErrors,
+  hasValidationErrors
 } = useLogin()
 </script>
 

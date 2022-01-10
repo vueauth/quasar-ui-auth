@@ -13,7 +13,7 @@ export default () => {
     login,
     isReauthenticating,
     resetForm,
-    resetErrors,
+    resetErrors
   } = useIdentityPasswordLogin()
   const { user } = useAuthState()
 
@@ -52,6 +52,6 @@ export default () => {
     login,
     resetForm,
     isReauthenticating,
-    attemptSetEmailOnForm,
+    attemptSetEmailOnForm
   }
 }

@@ -10,7 +10,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "dev": "cd ./test-app && yarn dev",
-    "build": "cd ./ui && yarn build"
+    "build": "cd ./ui && yarn build",
+    "clean": "cd ./test-app && node ./deleteScaffoldFiles.js",
+    "invoke": "cd ./test-app && quasar ext invoke @vueauth/auth"
   },
   "workspaces": [
     "ui",

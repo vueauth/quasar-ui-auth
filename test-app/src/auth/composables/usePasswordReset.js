@@ -3,7 +3,7 @@ import { usePasswordResetViaEmail } from '@vueauth/core'
 export default () => {
   const {
     requestForm,
-    resetForm,
+    resetPasswordForm,
     requestReset,
     reset,
     loading,
@@ -11,27 +11,24 @@ export default () => {
     validationErrors,
     errors,
     resetErrors,
+    hasErrors
   } = usePasswordResetViaEmail()
 
   async function onResetClicked () {
     await reset()
   }
 
-  async function onRequestResetClicked () {
-    await requestReset()
-  }
-
   return {
     onResetClicked,
-    onRequestResetClicked,
     requestForm,
-    resetForm,
+    resetPasswordForm,
     requestReset,
     reset,
     loading,
     hasValidationErrors,
     validationErrors,
     errors,
-    resetErrors,
+    hasErrors,
+    resetErrors
   }
 }

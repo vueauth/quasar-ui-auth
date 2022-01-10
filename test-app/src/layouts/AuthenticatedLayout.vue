@@ -15,6 +15,14 @@
         />
 
         <q-toolbar-title>Quasar {{ authProviderUpperFirst }}</q-toolbar-title>
+
+        <q-btn
+          icon="person"
+          round
+          flat
+        >
+          <AuthAccountMenu />
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -25,7 +33,7 @@
     >
       <q-list>
         <q-item-label header>
-          Your Menu
+          Menu
         </q-item-label>
       </q-list>
     </q-drawer>
@@ -39,6 +47,7 @@
 <script setup>
 import { ref } from 'vue'
 import { getDefaultProvider } from '@vueauth/core'
+import AuthAccountMenu from 'src/auth/components/AccountMenu/AccountMenu.vue'
 
 const leftDrawerOpen = ref(false)
 
