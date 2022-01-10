@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-app-extension-auth",
-  "version": "1.0.0-alpha.22",
+  "version": "1.0.0-alpha.23",
   "description": "Simple firebase integration with the Quasar Framework",
   "author": "luke@ldiebold.com",
   "license": "MIT",
