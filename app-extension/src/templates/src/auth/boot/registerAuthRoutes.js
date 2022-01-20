@@ -19,6 +19,13 @@ export default boot(({ router }) => {
     name: 'auth.requestPasswordReset',
     path: '/forgot-password',
     meta: { unauthOnly: true },
+    component: () => import('src/auth/pages/PasswordResetRequestViaEmailPage.vue')
+  })
+
+  router.addRoute('/', {
+    name: 'auth.resetPassword',
+    path: '/password-reset',
+    meta: { unauthOnly: true },
     component: () => import('src/auth/pages/PasswordResetViaEmailPage.vue')
   })
 

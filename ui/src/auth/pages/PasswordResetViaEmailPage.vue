@@ -1,5 +1,5 @@
 <script setup>
-import PasswordResetRequestCard from 'src/auth/components/PasswordResetRequestCard.vue'
+import PasswordResetCard from 'src/auth/components/PasswordResetCard.vue'
 
 </script>
 
@@ -13,14 +13,7 @@ import PasswordResetRequestCard from 'src/auth/components/PasswordResetRequestCa
       <h5 class="q-mb-md">
         Password Reset
       </h5>
-      <PasswordResetRequestCard />
-      <q-btn
-        class="full-width q-mt-md"
-        color="grey-6"
-        label="back"
-        flat
-        :to="{ name: 'auth.login' }"
-      />
+      <PasswordResetCard />
     </div>
   </div>
 </template>

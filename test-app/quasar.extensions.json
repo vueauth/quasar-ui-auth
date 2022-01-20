@@ -1,8 +1,8 @@
 {
   "@vueauth/auth": {
     "authProvider": {
-      "identifier": "sanctum",
-      "packageName": "@vueauth/sanctum"
+      "identifier": "firebase",
+      "packageName": "@vueauth/firebase"
     }
   }
 }
