@@ -1,25 +1,40 @@
-function extendConf (conf, api) {
-  conf.boot.push('../auth/boot/registerAuthRoutes.js')
-  conf.boot.push('../auth/boot/authProvidersBoot.js')
+function extendConf(conf, api) {
+	conf.boot.push('../auth/boot/registerAuthRoutes.js');
+	conf.boot.push('../auth/boot/authProvidersBoot.js');
 
-  // make sure app extension files & ui package gets transpiled
-  conf.build.transpileDependencies.push(/quasar-app-extension-model-components[\\/]src/)
-
-  conf.framework.plugins.push('Loading')
+	// @quasar/app-vite does not need this
+	if (api.hasVite !== true) {
+		// make sure app extension files & ui package gets transpiled
+		conf.build.transpileDependencies.push(/quasar-app-extension-model-components[\\/]src/);
+	}
+	conf.framework.plugins.push('Loading');
 }
 
 module.exports = function (api) {
-  api.compatibleWith('quasar', '^2.0.0')
-  api.compatibleWith('@quasar/app', '^3.0.0')
+	api.compatibleWith('quasar', '^2.0.0');
 
-  // Uncomment the line below if you provide a JSON API for your component
-  // api.registerDescribeApi('AuthRegisterForm', '~quasar-ui-auth/src/components/AuthRegisterForm.json')
+	if (api.hasVite === true) {
+		api.compatibleWith('@quasar/app-vite', '^1.0.0-beta.0');
+	} else {
+		// api.hasWebpack === true
+		api.compatibleWith('@quasar/app-webpack', '^3.0.0');
+	}
 
-  // We extend /quasar.conf.js
-  api.extendQuasarConf(extendConf, api)
+	// Uncomment the line below if you provide a JSON API for your component
+	// api.registerDescribeApi('AuthRegisterForm', '~quasar-ui-auth/src/components/AuthRegisterForm.json')
 
-  // Add webpack alias for auth
-  api.chainWebpack((chain) => {
-    chain.resolve.alias.set('auth', api.resolve.src('auth'))
-  })
-}
+	// We extend /quasar.conf.js
+	api.extendQuasarConf(extendConf, api);
+
+	if (api.hasVite === true) {
+		// Add Vite alias for auth
+		api.extendViteConf(viteConf => {
+			Object.assign(viteConf.resolve.alias, { auth: api.resolve.src('auth') });
+		});
+	} else {
+		// Add webpack alias for auth
+		api.chainWebpack(chain => {
+			chain.resolve.alias.set('auth', api.resolve.src('auth'));
+		});
+	}
+};
