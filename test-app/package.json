@@ -8,17 +8,21 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev -m spa"
+    "dev": "quasar dev -m spa",
+    "setcli:vite": "node ./quasar-configs/switchToVite.js",
+    "setcli:webpack": "node ./quasar-configs/switchToWebpack.js"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
+    "@quasar/extras": "^1.13.3",
+    "@vueauth/firebase": "^1.0.0-alpha.20",
     "core-js": "^3.6.5",
-    "quasar": "^2.0.0",
-    "firebase": "^9.0.0"
+    "firebase": "^9.0.0",
+    "quasar": "^2.6.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
-    "@quasar/app": "^3.0.0",
+    "@quasar/app-vite": "^1.0.0-alpha.0",
+    "@quasar/app-webpack": "^3.0.0",
     "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.10",
     "eslint": "^7.14.0",
     "eslint-config-standard": "^16.0.2",
