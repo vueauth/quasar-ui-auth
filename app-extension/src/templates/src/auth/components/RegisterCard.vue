@@ -25,11 +25,15 @@ const {
         v-model:password="form.password"
         v-model:password-confirmation="form.password_confirmation"
         v-model:name="form.name"
+        v-model:username="form.username"
         :validation-errors="validationErrors"
       />
 
       <!-- Errors -->
-      <div v-if="!hasValidationErrors">
+      <div
+        v-if="!hasValidationErrors"
+        class="q-mb-sm"
+      >
         <AuthErrorsBanner :errors="errors" />
       </div>
     </q-card-section>
@@ -38,7 +42,7 @@ const {
     <q-btn
       v-if="!registered"
       :loading="loading"
-      class="q-mt-sm full-width"
+      class="full-width"
       color="primary"
       label="register"
       unelevated

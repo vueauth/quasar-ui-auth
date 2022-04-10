@@ -1,8 +1,8 @@
 import { boot } from 'quasar/wrappers'
 import { AuthPlugin } from '@vueauth/core'
-import <%= authProviderIdentifier %>Config from 'app/config/<%= authProviderIdentifier %>'
+import strapiConfig from 'app/config/strapi'
 import {
-  <%= authProviderIdentifierPascal %>Plugin,
+  StrapiPlugin,
   useIdentityPasswordRegister,
   useIdentityPasswordLogin,
   useIdentityPasswordLogout,
@@ -14,17 +14,20 @@ import {
   useFetchUser,
   usePasswordResetViaEmail,
   useUpdatePassword
-} from '<%= authProviderPackage %>'
+} from '@vueauth/strapi'
 
 export default boot(({ app }) => {
-  app.use(<%= authProviderIdentifierPascal %>Plugin, <%= authProviderIdentifier %>Config) // Be sure to update config/<%= authProviderIdentifier %> to configure your app!
+  app.use(StrapiPlugin, strapiConfig) // Be sure to update config/strapi to configure your app!
 
   app.use(AuthPlugin, {
-    default: '<%= authProviderIdentifier %>',
+    default: 'strapi',
     providers: {
-      <%= authProviderIdentifier %>: {
+      strapi: {
         features: {
-          'identityPassword:register': useIdentityPasswordRegister,
+          'identityPassword:register': {
+            composable: useIdentityPasswordRegister,
+            config: { withUsername: false }
+          },
           'identityPassword:login': useIdentityPasswordLogin,
           'identityPassword:logout': useIdentityPasswordLogout,
           unauthenticatedRedirector: useUnauthenticatedRedirector,

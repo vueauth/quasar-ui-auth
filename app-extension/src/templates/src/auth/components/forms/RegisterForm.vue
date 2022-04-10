@@ -1,6 +1,7 @@
 <script setup>
 import { QInput, QForm } from 'quasar'
-import { defineProps, defineEmits } from 'vue'
+import { getConfig } from '@vueauth/core'
+const { withUsername } = getConfig('identityPassword:register')
 
 defineProps({
   email: {
@@ -20,6 +21,11 @@ defineProps({
     type: String,
     default: null
   },
+  username: {
+    required: false,
+    type: String,
+    default: null
+  },
   validationErrors: {
     required: false,
     type: Object,
@@ -31,7 +37,8 @@ const emit = defineEmits([
   'update:email',
   'update:password',
   'update:passwordConfirmation',
-  'update:name'
+  'update:name',
+  'update:username'
 ])
 </script>
 
@@ -47,6 +54,17 @@ const emit = defineEmits([
       class="q-mb-sm"
       hide-bottom-space
       @update:model-value="value => emit('update:name', value)"
+    />
+    <q-input
+      v-if="withUsername"
+      filled
+      label="Username"
+      :model-value="username"
+      :error="!!validationErrors?.['username']"
+      :error-message="validationErrors?.['username']?.[0]"
+      class="q-mb-sm"
+      hide-bottom-space
+      @update:model-value="value => emit('update:username', value)"
     />
     <q-input
       filled

@@ -1,8 +1,8 @@
 import { boot } from 'quasar/wrappers'
 import { AuthPlugin } from '@vueauth/core'
-import <%= authProviderIdentifier %>Config from 'app/config/<%= authProviderIdentifier %>'
+import firebaseConfig from 'app/config/firebase'
 import {
-  <%= authProviderIdentifierPascal %>Plugin,
+  FirebasePlugin,
   useIdentityPasswordRegister,
   useIdentityPasswordLogin,
   useIdentityPasswordLogout,
@@ -14,15 +14,15 @@ import {
   useFetchUser,
   usePasswordResetViaEmail,
   useUpdatePassword
-} from '<%= authProviderPackage %>'
+} from '@vueauth/firebase'
 
 export default boot(({ app }) => {
-  app.use(<%= authProviderIdentifierPascal %>Plugin, <%= authProviderIdentifier %>Config) // Be sure to update config/<%= authProviderIdentifier %> to configure your app!
+  app.use(FirebasePlugin, firebaseConfig) // Be sure to update config/firebase to configure your app!
 
   app.use(AuthPlugin, {
-    default: '<%= authProviderIdentifier %>',
+    default: 'firebase',
     providers: {
-      <%= authProviderIdentifier %>: {
+      firebase: {
         features: {
           'identityPassword:register': useIdentityPasswordRegister,
           'identityPassword:login': useIdentityPasswordLogin,

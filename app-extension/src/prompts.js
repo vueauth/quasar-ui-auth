@@ -25,6 +25,13 @@ module.exports = function () {
             identifier: 'supabase',
             packageName: '@vueauth/supabase'
           }
+        },
+        {
+          name: 'Strapi',
+          value: {
+            identifier: 'strapi',
+            packageName: '@vueauth/strapi'
+          }
         }
       ]
     }

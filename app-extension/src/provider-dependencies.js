@@ -15,5 +15,10 @@ module.exports = {
     dependencies: {
       '@vueauth/sanctum': '^1.0.0-alpha.20'
     }
+  },
+  strapi: {
+    dependencies: {
+      '@vueauth/strapi': '^1.0.0-alpha.6'
+    }
   }
 }
