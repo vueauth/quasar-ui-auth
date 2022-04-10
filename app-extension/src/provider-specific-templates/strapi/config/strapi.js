@@ -28,13 +28,11 @@ export default {
    * course configure your own.
    */
   endpoints: {
-    // login: '/login',
-    // register: '/register',
-    // logout: '/logout',
-    // getUser: 'api/user',
-    // csrfCookie: '/strapi/csrf-cookie',
-    // resetPassword: '/reset-password',
-    // forgotPassword: '/forgot-password',
-    // password: '/user/password'
+    login: 'api/auth/local',
+    register: 'api/auth/local/register',
+    getUser: 'api/users/me',
+    resetPassword: 'api/auth/reset-password',
+    forgotPassword: 'api/auth/forgot-password',
+    changePassword: 'api/update-password'
   }
 }

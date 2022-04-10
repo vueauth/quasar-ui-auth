@@ -1,5 +1,5 @@
 <script setup>
-import { toRef, defineProps } from 'vue'
+import { toRef } from 'vue'
 
 const props = defineProps({
   errors: {
