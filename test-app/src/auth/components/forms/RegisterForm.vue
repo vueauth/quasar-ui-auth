@@ -1,6 +1,5 @@
 <script setup>
 import { QInput, QForm } from 'quasar'
-import { defineProps, defineEmits } from 'vue'
 
 defineProps({
   email: {
