@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-app-extension-auth",
-  "version": "1.0.0-alpha.28",
+  "version": "1.0.0-alpha.29",
   "description": "Simple auth integration with the Quasar Framework",
   "author": "luke@ldiebold.com",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "bugs": "https://github.com/vueauth/vueauth/issues",
   "homepage": "https://vueauth.com/",
   "dependencies": {
-    "@vueauth/quasar-ui-auth": "^1.0.0-alpha.28"
+    "@vueauth/quasar-ui-auth": "^1.0.0-alpha.29"
   },
   "engines": {
     "node": ">= 8.9.0",
