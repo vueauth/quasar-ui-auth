@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-ui-auth",
-  "version": "1.0.0-alpha.29",
+  "version": "1.0.0-alpha.31",
   "author": "luke@ldiebold.com",
   "description": "Simple auth integration with the Quasar Framework",
   "license": "MIT",
@@ -8,12 +8,12 @@
   "main": "dist/index.common.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-pattern authProvidersBoot.js --ignore-pattern dist --ignore-pattern build ./",
-    "dev": "cd dev && yarn dev && cd ..",
-    "dev:umd": "yarn build && node build/script.open-umd.js",
-    "dev:ssr": "cd dev && yarn 'dev:ssr' && cd ..",
-    "dev:ios": "cd dev && yarn 'dev:ios' && cd ..",
-    "dev:android": "cd dev && yarn 'dev:android' && cd ..",
-    "dev:electron": "cd dev && yarn 'dev:electron' && cd ..",
+    "dev": "cd dev && pnpm dev && cd ..",
+    "dev:umd": "pnpm build && node build/script.open-umd.js",
+    "dev:ssr": "cd dev && pnpm 'dev:ssr' && cd ..",
+    "dev:ios": "cd dev && pnpm 'dev:ios' && cd ..",
+    "dev:android": "cd dev && pnpm 'dev:android' && cd ..",
+    "dev:electron": "cd dev && pnpm 'dev:electron' && cd ..",
     "build": "node build/index.js",
     "build:js": "node build/script.javascript.js"
   },
@@ -41,7 +41,9 @@
     "uglify-js": "^3.13.3",
     "zlib": "^1.0.5"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "vue-router": "4.x"
+  },
   "browserslist": [
     "last 4 Chrome versions",
     "last 4 Firefox versions",
