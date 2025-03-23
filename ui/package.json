@@ -1,6 +1,6 @@
 {
   "name": "@vueauth/quasar-ui-auth",
-  "version": "1.0.0-alpha.32",
+  "version": "1.1.0-alpha.1",
   "author": "luke@ldiebold.com",
   "description": "Simple auth integration with the Quasar Framework",
   "license": "MIT",

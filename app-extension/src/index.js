@@ -19,7 +19,7 @@ module.exports = function (api) {
     api.compatibleWith('@quasar/app-vite', '^1.x || ^2.0.0-beta || ^2.x')
   } else {
     // api.hasWebpack === true
-    api.compatibleWith('@quasar/app-webpack', '^3.0.0')
+    api.compatibleWith('@quasar/app-webpack', '^3.0.0 || ^4.x')
   }
 
   // We extend /quasar.conf.js

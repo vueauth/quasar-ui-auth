@@ -6,6 +6,13 @@ module.exports = function () {
       message: 'Select an auth provider',
       choices: [
         {
+          name: 'IndexedDB',
+          value: {
+            identifier: 'indexeddb',
+            packageName: '@vueauth/indexeddb'
+          }
+        },
+        {
           name: 'Laravel Sanctum',
           value: {
             identifier: 'sanctum',

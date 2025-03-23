@@ -1,8 +1,8 @@
 import { boot } from 'quasar/wrappers'
 import { AuthPlugin } from '@vueauth/core'
-import firebaseConfig from 'app/config/firebase'
+import indexedDbConfig from 'app/config/indexeddb'
 import {
-  FirebasePlugin,
+  IndexedDbPlugin,
   useIdentityPasswordRegister,
   useIdentityPasswordLogin,
   useIdentityPasswordLogout,
@@ -14,15 +14,15 @@ import {
   useFetchUser,
   usePasswordResetViaEmail,
   useUpdatePassword
-} from '@vueauth/firebase'
+} from '@vueauth/indexeddb'
 
 export default boot(({ app }) => {
-  app.use(FirebasePlugin, firebaseConfig) // Be sure to update config/firebase to configure your app!
+  app.use(IndexedDbPlugin, indexedDbConfig) // Be sure to update config/sanctum to configure your app!
 
   app.use(AuthPlugin, {
-    default: 'firebase',
+    default: 'indexeddb',
     providers: {
-      firebase: {
+      indexeddb: {
         features: {
           'identityPassword:register': useIdentityPasswordRegister,
           'identityPassword:login': useIdentityPasswordLogin,
